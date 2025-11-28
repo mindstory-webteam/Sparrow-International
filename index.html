@@ -370,47 +370,69 @@
                             <div class="container">
                                 <div class="wide_section-title">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <h5>Trust, Transit & Transformation </h5>
                                             <h3>Redefining Automotive Solutions With Trust &amp; Quality</h3>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="wide_section-container">
-                                                <div class="clients-carousel-wrap">
-                                                    <div class="cc-btn   cc-prev"><i class="fas fa-angle-left"></i></div>
-                                                    <div class="cc-btn cc-next"><i class="fas fa-angle-right"></i></div>
-                                                    <div class="clients-carousel">
-                                                        <div class="swiper-container">
-                                                            <div class="swiper-wrapper">
-                                                                <!--client-item-->
-                                                                <div class="swiper-slide">
-                                                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                                                </div>
-                                                                <!--client-item end-->
-                                                                <!--client-item-->
-                                                                <div class="swiper-slide">
-                                                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                                                </div>
-                                                                <!--client-item end-->
-                                                                <!--client-item-->
-                                                                <div class="swiper-slide">
-                                                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                                                </div>
-                                                                <!--client-item end-->
-                                                                <!--client-item-->
-                                                                <div class="swiper-slide">
-                                                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                                                </div>
-                                                                <!--client-item end-->
-                                                                <!--client-item-->
-                                                                <div class="swiper-slide">
-                                                                    <a href="#" class="client-item"><img src="images/clients/1.png" alt=""></a>
-                                                                </div>
-                                                                <!--client-item end-->
-                                                            </div>
-                                                        </div>
+                                                    <div class="clients-carousel-wrap">
+                                                <div class="scrolling-text-container">
+                                                    <div class="scrolling-text">
+                                                        <span>Reliability that moves</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Quality that lasts</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Excellence in motion</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Trust delivered</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Reliability that moves</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Quality that lasts</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Excellence in motion</span>
+                                                        <span class="marquee-separator">•</span>
+                                                        <span>Trust delivered</span>
+                                                        <span class="marquee-separator">•</span>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <style>
+                                            .scrolling-text-container {
+                                                overflow: hidden;
+                                                white-space: nowrap;
+                                                padding: 20px 0;
+                                                /* background: #f5f5f5; */
+                                            }
+
+                                            .scrolling-text {
+                                                display: inline-block;
+                                                animation: scroll-left 20s linear infinite;
+                                            }
+
+                                            .scrolling-text span {
+                                                display: inline-block;
+                                                font-size: 18px;
+                                                font-weight: 500;
+                                                color: #f5f5f5;
+                                            }
+
+                                            @keyframes scroll-left {
+                                                0% {
+                                                    transform: translateX(0);
+                                                }
+                                                100% {
+                                                    transform: translateX(-50%);
+                                                }
+                                            }
+
+                                            /* Pause animation on hover */
+                                            .scrolling-text-container:hover .scrolling-text {
+                                                animation-play-state: paused;
+                                            }
+                                            </style>
                                             </div>
                                         </div>
                                     </div>

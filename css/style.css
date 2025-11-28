@@ -4018,7 +4018,7 @@ background: rgba(0, 0, 0, .6);
 .clients-carousel-wrap {
 	position: relative;
 	overflow: hidden;
-	padding: 0 70px;
+	/* padding: 0 70px; */
 	top: 30px;
     background: #164476;
     -webkit-backdrop-filter: blur(4px);
@@ -4030,7 +4030,7 @@ background: rgba(0, 0, 0, .6);
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	width: 70px;
+	/* width: 100px; */
 	background: #f9f9f9;
 	z-index: 2;
 }
@@ -4375,12 +4375,12 @@ background: rgba(0, 0, 0, .6);
 .accordion a.toggle.act-accordion {
  	color:#fff;
 	border-color:transparent;
-	background: #222;
+	background: #164476;
 }
 .accordion a.toggle.act-accordion i {
     transform: rotateX(180deg);
 	background: var(--main-color);
-	color:#000;
+	color:#fff;
 	border-color: transparent;
 }
 .accordion-inner {
@@ -5565,7 +5565,7 @@ background: rgba(0, 0, 0, .6);
 }
 .comments-item-date i , .fixed-filters_title i {
 	margin-right: 10px;
-	color:var(--main-color);
+	/* color:var(--main-color); */
 }
 .reply-item {
 	float: right;
