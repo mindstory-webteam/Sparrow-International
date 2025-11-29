@@ -189,6 +189,7 @@ blockquote p {
 	min-height: 100vh
 }
 .content-box:after {
+
 	content: '';
 	position: absolute;
 	bottom: -85px;
@@ -1949,7 +1950,7 @@ background: rgba(0, 0, 0, .6);
 	float: right;
 	width: 50%;
 	padding: 50px 90px;
-	background: #222;
+	background: #164476;
 	border: 1px solid rgba(255,255,255,.1);
 }
 .column-section-opions {
@@ -1964,7 +1965,7 @@ background: rgba(0, 0, 0, .6);
 	padding:20px 30px 20px 105px;
 	margin-bottom: 10px;
 	border: 1px solid rgba(255,255,255,.1);
-	background: #111;
+	background: #164476;
 }
 .column-section-opions li:last-child {
 	margin-bottom: 0;	
@@ -3287,7 +3288,7 @@ background: rgba(0, 0, 0, .6);
 	top: -10px;
 	height: 60px;
 	line-height: 60px;
-	background: var(--main-color);
+	background: #164476;
 	z-index: 20;
 	padding: 0 50px;
 	font-family: var(--secondary-font);
@@ -3341,13 +3342,14 @@ background: rgba(0, 0, 0, .6);
     z-index: 1;
 } 
 .dc_dec-item_right h4 {
-  	background:var(--main-color);
+  	background:#164476;
     padding: 10px 20px;
 	text-transform: uppercase;
 	font-size: 1.4em;
 	font-weight:600;
 	text-align: left;
     font-family: var(--secondary-font);
+	color: #fff;
 	z-index: 2;
 }
 .dc_dec-item_right h4 span {
@@ -4512,7 +4514,7 @@ background: rgba(0, 0, 0, .6);
 	top: 12px;
 }
 .det-list {
-	background: #222;
+	background: #164476;
 	margin:12px 0;
 	position: relative;
 	overflow: hidden;
@@ -4537,7 +4539,7 @@ background: rgba(0, 0, 0, .6);
 	right: 11px;
 	border: 1px solid rgba(255,255,255,.2);
 	z-index: 2;
-	box-shadow: 0px 0px 0px 10px #111;
+	/* box-shadow: 0px 0px 0px 10px; */
 }
 .det-list-wrap {
 	position: relative;
