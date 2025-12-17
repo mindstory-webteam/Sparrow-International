@@ -176,7 +176,7 @@
                 <!-- section -->
                 <div class="section hero-section">
                     <div class="bg-wrap-container" data-scrollax-parent="true">
-                        <div class="bg bg-parallax" data-bg="images/Banner/automotive/two-wheeler-banner.png"  data-scrollax="properties: { translateY: '30%' }"></div>
+                        <div class="bg bg-parallax" data-bg="images/Banner/shell-folder/shell-banner.png"  data-scrollax="properties: { translateY: '30%' }"></div>
                         <div class="overlay"></div>
                     </div>
                     <div class="container">
@@ -197,7 +197,7 @@
                         <div class="breadcrumbs">
                             <div class="container">
                                 <div class="breadcrumbs-wrap">
-                                    <a href="./index.html">Home</a><a href="#">Automotive</a><span>Two & Three Wheeler Parts</span> 
+                                    <a href="./index.html">Home</a><a href="#">Automotive</a><span>Two & Three Wheeler Parts </span> 
                                 </div>
                                 <div class="hs-scroll-down-wrap">
                                     <div class="scroll-down-item">
@@ -224,7 +224,7 @@
                                                     <div class="single-box-content">
                                                         <div class="det-box container">
                                                             <div class="det-box-ietm det-box-ietm_single">
-                                                                <h3 class="bold-text"> Two & Three Wheeler Parts <span class="bt_dec"></span></h3>
+                                                                <h3 class="bold-text"> Two & Three Wheeler Parts  <span class="bt_dec"></span></h3>
                                                                 <p>Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae. Ut nec hinc dolor possim. An eros argumentum vel, elit diceret duo eu, quo et aliquid ornatus delicatissimi. Pri choro pertinax indoctum ne, ad partiendo persecuti forensibus est.</p>
                                                             </div>
                                                         </div>
@@ -233,7 +233,7 @@
                                                     <!-- Product Gallery Section -->
                                                     <div class="product-gallery-section">
                                                         <div class="single-box-content">
-                                                        <h3 class="gallery-title">Our Product Gallery</h3>
+                                                        <h3 class="gallery-title">Two & Three Wheeler Parts Gallery</h3>
                                                         <div class="gallery-grid">
                                                             <div class="gallery-item">
                                                                 <div class="gallery-img-box">
@@ -555,7 +555,7 @@
                                                 <!--boxed-content-->
                                                 <div class="boxed-content">
                                                     <!--boxed-content-title-->
-                                                    <h3 class="bold-text">Other Details<span class="bt_dec"></span></h3>
+                                                    <h3 class="bold-text">Other Details <span class="bt_dec"></span></h3>
                                                     <!--boxed-content-title end-->												
                                                     <div class="piechart-holder animaper" data-skcolor="#F7B90F">
                                                         <div class="piechart-container">
@@ -576,821 +576,511 @@
                                                 </div>
                                                 <!--boxed-content end-->
                                                 <!--boxed-content-->
-                                                    <div class="boxed-content">
-                                                    <!--boxed-content-title-->
-                                                   
-                                                    
-
-
-                                        <!--GOOGLE MAP------------------------------------------------------------------------------------ START-->
-
-                                            <style>
-                                                .km-wrapper * {
-                                                    margin: 0;
-                                                    padding: 0;
-                                                    box-sizing: border-box;
-                                                }
-
-                                                .km-wrapper {
-                                                    width: 100%;
-                                                    height: 450px;
-                                                    padding: 0;
-                                                    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-                                                    position: relative;
-                                                }
-
-                                                #km-map-container {
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    border-radius: 0;
-                                                    overflow: hidden;
-                                                }
-
-                                                /* Search Box Styling */
-                                                .km-search-box {
-                                                    position: absolute;
-                                                    top: 10px;
-                                                    left: 50%;
-                                                    transform: translateX(-50%);
-                                                    z-index: 10;
-                                                    background: white;
-                                                    padding: 8px 15px;
-                                                    border-radius: 25px;
-                                                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: 8px;
-                                                }
-
-                                                .km-search-box input {
-                                                    border: none;
-                                                    outline: none;
-                                                    font-size: 14px;
-                                                    width: 200px;
-                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                                }
-
-                                                .km-search-box button {
-                                                    background: #ef4444;
-                                                    color: white;
-                                                    border: none;
-                                                    padding: 6px 15px;
-                                                    border-radius: 20px;
-                                                    cursor: pointer;
-                                                    font-size: 13px;
-                                                    font-weight: 500;
-                                                    transition: background 0.3s;
-                                                }
-
-                                                .km-search-box button:hover {
-                                                    background: #dc2626;
-                                                }
-
-                                                /* Location Counter */
-                                                .km-location-counter {
-                                                    position: absolute;
-                                                    bottom: 15px;
-                                                    left: 15px;
-                                                    z-index: 10;
-                                                    background: white;
-                                                    padding: 8px 15px;
-                                                    border-radius: 20px;
-                                                    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-                                                    font-size: 13px;
-                                                    font-weight: 600;
-                                                    color: #ef4444;
-                                                }
-
-                                                /* Info Window Styling */
-                                                .km-info-content {
-                                                    padding: 15px 18px;
-                                                    font-weight: 500;
-                                                    font-size: 15px;
-                                                    color: #1f2937;
-                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                                    line-height: 1.6;
-                                                    min-width: 220px;
-                                                    max-width: 300px;
-                                                }
-
-                                                .km-info-content .km-loc-title {
-                                                    font-size: 18px;
-                                                    font-weight: 700;
-                                                    color: #ef4444;
-                                                    margin-bottom: 8px;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: 8px;
-                                                }
-
-                                                .km-info-content .km-loc-type {
-                                                    display: inline-block;
-                                                    background: #fee2e2;
-                                                    color: #ef4444;
-                                                    padding: 2px 8px;
-                                                    border-radius: 10px;
-                                                    font-size: 11px;
-                                                    font-weight: 600;
-                                                    text-transform: uppercase;
-                                                }
-
-                                                .km-info-content .km-loc-desc {
-                                                    font-size: 14px;
-                                                    color: #6b7280;
-                                                    font-weight: 400;
-                                                    margin-top: 6px;
-                                                }
-
-                                                .km-info-content .km-loc-coords {
-                                                    font-size: 11px;
-                                                    color: #9ca3af;
-                                                    margin-top: 8px;
-                                                    font-family: monospace;
-                                                }
-
-                                                .km-info-content .km-directions-link {
-                                                    display: inline-block;
-                                                    margin-top: 10px;
-                                                    color: #ef4444;
-                                                    text-decoration: none;
-                                                    font-size: 13px;
-                                                    font-weight: 600;
-                                                    transition: color 0.3s;
-                                                }
-
-                                                .km-info-content .km-directions-link:hover {
-                                                    color: #dc2626;
-                                                }
-
-                                                /* Loading Spinner */
-                                                .km-loading {
-                                                    position: absolute;
-                                                    top: 50%;
-                                                    left: 50%;
-                                                    transform: translate(-50%, -50%);
-                                                    z-index: 5;
-                                                    display: none;
-                                                }
-
-                                                .km-loading.km-active {
-                                                    display: block;
-                                                }
-
-                                                .km-spinner {
-                                                    border: 3px solid #f3f3f3;
-                                                    border-top: 3px solid #ef4444;
-                                                    border-radius: 50%;
-                                                    width: 40px;
-                                                    height: 40px;
-                                                    animation: km-spin 1s linear infinite;
-                                                }
-
-                                                @keyframes km-spin {
-                                                    0% { transform: rotate(0deg); }
-                                                    100% { transform: rotate(360deg); }
-                                                }
-
-                                                /* Error Message */
-                                                .km-error {
-                                                    position: absolute;
-                                                    top: 50%;
-                                                    left: 50%;
-                                                    transform: translate(-50%, -50%);
-                                                    background: white;
-                                                    padding: 20px;
-                                                    border-radius: 10px;
-                                                    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                                                    text-align: center;
-                                                    max-width: 400px;
-                                                    display: none;
-                                                    z-index: 20;
-                                                }
-
-                                                .km-error.km-active {
-                                                    display: block;
-                                                }
-
-                                                .km-error h3 {
-                                                    color: #ef4444;
-                                                    margin-bottom: 10px;
-                                                    font-size: 16px;
-                                                }
-
-                                                .km-error p {
-                                                    color: #6b7280;
-                                                    font-size: 14px;
-                                                    line-height: 1.6;
-                                                }
-
-                                                /* Tablet Portrait - 768px and below */
-                                                @media (max-width: 768px) {
-                                                    .km-wrapper {
-                                                        height: 400px;
-                                                    }
-                                                    
-                                                    .km-search-box {
-                                                        top: 10px;
-                                                        left: 10px;
-                                                        transform: none;
-                                                        width: calc(100% - 20px);
-                                                    }
-                                                    
-                                                    .km-search-box input {
-                                                        width: 100%;
-                                                        flex: 1;
-                                                    }
-                                                    
-                                                    .km-location-counter {
-                                                        bottom: 10px;
-                                                        left: 10px;
-                                                        font-size: 12px;
-                                                        padding: 6px 12px;
-                                                    }
-                                                    
-                                                    .km-info-content {
-                                                        font-size: 14px;
-                                                        min-width: 180px;
-                                                        padding: 12px 15px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-title {
-                                                        font-size: 16px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-desc {
-                                                        font-size: 13px;
-                                                    }
-                                                }
-
-                                                /* Mobile Landscape - 576px and below */
-                                                @media (max-width: 576px) {
-                                                    .km-wrapper {
-                                                        height: 350px;
-                                                    }
-                                                    
-                                                    .km-search-box {
-                                                        padding: 6px 12px;
-                                                    }
-                                                    
-                                                    .km-search-box input {
-                                                        font-size: 13px;
-                                                    }
-                                                    
-                                                    .km-search-box button {
-                                                        padding: 5px 12px;
-                                                        font-size: 12px;
-                                                    }
-                                                    
-                                                    .km-info-content {
-                                                        font-size: 13px;
-                                                        min-width: 160px;
-                                                        padding: 10px 12px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-title {
-                                                        font-size: 15px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-desc {
-                                                        font-size: 12px;
-                                                    }
-                                                }
-
-                                                /* Small Mobile - 400px and below */
-                                                @media (max-width: 400px) {
-                                                    .km-wrapper {
-                                                        height: 300px;
-                                                    }
-                                                    
-                                                    .km-info-content {
-                                                        font-size: 12px;
-                                                        min-width: 140px;
-                                                        padding: 8px 10px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-title {
-                                                        font-size: 14px;
-                                                        margin-bottom: 4px;
-                                                    }
-                                                    
-                                                    .km-info-content .km-loc-desc {
-                                                        font-size: 11px;
-                                                    }
-                                                }
-
-                                                /* Large Desktop - 1920px and above */
-                                                @media (min-width: 1920px) {
-                                                    .km-wrapper {
-                                                        height: 550px;
-                                                    }
-                                                }
-                                            </style>
-
-                                            <style>
-                                                /* Kerala Map Styles */
-                                                .kerala-tourist-map {
-                                                    width: 100%;
-                                                    height: 450px;
-                                                    position: relative;
-                                                    overflow: hidden;
-                                                    background: #f0f0f0;
-                                                }
-
-                                                #keralaMapCanvas {
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    display: block;
-                                                }
-
-                                                /* Search Box at Bottom */
-                                                .kerala-search-control {
-                                                    position: absolute;
-                                                    bottom: 20px;
-                                                    left: 50%;
-                                                    transform: translateX(-50%);
-                                                    z-index: 1000;
-                                                    background: #ffffff;
-                                                    padding: 10px 16px;
-                                                    border-radius: 30px;
-                                                    box-shadow: 0 3px 15px rgba(0,0,0,0.25);
-                                                    display: flex;
-                                                    align-items: center;
-                                                    gap: 10px;
-                                                }
-
-                                                .kerala-search-control input {
-                                                    border: none;
-                                                    outline: none;
-                                                    font-size: 14px;
-                                                    width: 240px;
-                                                    background: transparent;
-                                                    color: #333;
-                                                }
-
-                                                .kerala-search-control input::placeholder {
-                                                    color: #999;
-                                                }
-
-                                                .kerala-search-btn {
-                                                    background: #ef4444;
-                                                    color: #ffffff;
-                                                    border: none;
-                                                    padding: 8px 20px;
-                                                    border-radius: 25px;
-                                                    cursor: pointer;
-                                                    font-size: 13px;
-                                                    font-weight: 600;
-                                                    transition: all 0.3s ease;
-                                                }
-
-                                                .kerala-search-btn:hover {
-                                                    background: #dc2626;
-                                                    transform: scale(1.05);
-                                                }
-
-                                                /* Location Badge at Top */
-                                                .kerala-location-badge {
-                                                    position: absolute;
-                                                    top: 15px;
-                                                    left: 15px;
-                                                    z-index: 1000;
-                                                    background: #ffffff;
-                                                    padding: 10px 18px;
-                                                    border-radius: 25px;
-                                                    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-                                                    font-size: 14px;
-                                                    font-weight: 700;
-                                                    color: #ef4444;
-                                                }
-
-                                                /* Loading Overlay */
-                                                .kerala-map-loader {
-                                                    position: absolute;
-                                                    top: 0;
-                                                    left: 0;
-                                                    width: 100%;
-                                                    height: 100%;
-                                                    background: rgba(255,255,255,0.9);
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    z-index: 999;
-                                                }
-
-                                                .kerala-map-loader.hidden {
-                                                    display: none;
-                                                }
-
-                                                .loader-spinner {
-                                                    width: 50px;
-                                                    height: 50px;
-                                                    border: 4px solid #f3f3f3;
-                                                    border-top: 4px solid #ef4444;
-                                                    border-radius: 50%;
-                                                    animation: spinLoader 1s linear infinite;
-                                                }
-
-                                                @keyframes spinLoader {
-                                                    0% { transform: rotate(0deg); }
-                                                    100% { transform: rotate(360deg); }
-                                                }
-
-                                                /* Info Window Custom Styles */
-                                                .kerala-info-box {
-                                                    padding: 16px 20px;
-                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                                    max-width: 280px;
-                                                }
-
-                                                .kerala-info-title {
-                                                    font-size: 18px;
-                                                    font-weight: 700;
-                                                    color: #ef4444;
-                                                    margin-bottom: 6px;
-                                                }
-
-                                                .kerala-info-type {
-                                                    display: inline-block;
-                                                    background: #fee2e2;
-                                                    color: #ef4444;
-                                                    padding: 3px 10px;
-                                                    border-radius: 12px;
-                                                    font-size: 11px;
-                                                    font-weight: 600;
-                                                    text-transform: uppercase;
-                                                    margin-bottom: 8px;
-                                                }
-
-                                                .kerala-info-desc {
-                                                    font-size: 14px;
-                                                    color: #6b7280;
-                                                    line-height: 1.5;
-                                                    margin-bottom: 8px;
-                                                }
-
-                                                .kerala-info-coords {
-                                                    font-size: 11px;
-                                                    color: #9ca3af;
-                                                    font-family: 'Courier New', monospace;
-                                                    margin-bottom: 10px;
-                                                }
-
-                                                .kerala-info-link {
-                                                    display: inline-block;
-                                                    color: #ef4444;
-                                                    text-decoration: none;
-                                                    font-size: 13px;
-                                                    font-weight: 600;
-                                                    transition: color 0.3s;
-                                                }
-
-                                                .kerala-info-link:hover {
-                                                    color: #dc2626;
-                                                }
-
-                                                /* Hide Google Maps errors */
-                                                .gm-style .gm-err-container,
-                                                .gm-style-cc,
-                                                .gm-style-moc {
-                                                    display: none !important;
-                                                }
-
-                                                /* Responsive Design */
-                                                @media (max-width: 768px) {
-                                                    .kerala-tourist-map {
-                                                        height: 400px;
-                                                    }
-
-                                                    .kerala-search-control {
-                                                        bottom: 15px;
-                                                        left: 15px;
-                                                        right: 15px;
-                                                        transform: none;
-                                                        width: calc(100% - 30px);
-                                                    }
-
-                                                    .kerala-search-control input {
-                                                        width: 100%;
-                                                        flex: 1;
-                                                    }
-
-                                                    .kerala-location-badge {
-                                                        font-size: 12px;
-                                                        padding: 8px 14px;
-                                                    }
-                                                }
-
-                                                @media (max-width: 576px) {
-                                                    .kerala-tourist-map {
-                                                        height: 350px;
-                                                    }
-
-                                                    .kerala-search-control {
-                                                        padding: 8px 12px;
-                                                    }
-
-                                                    .kerala-search-btn {
-                                                        padding: 7px 16px;
-                                                        font-size: 12px;
-                                                    }
-                                                }
-                                            </style>
-
+                                           <div class="boxed-content">
                                             <h3 class="bold-text">Area of Working<span class="bt_dec"></span></h3>
                                             <!--boxed-content-title end-->												
-                                            <!--boxed-content-item-->
-                                            <div class="boxed-content-item bc-item_smal_pad">
-                                                <!-- map-wrapper -->
-                                                <div class="map-wrapper" style="height: 450px;">
-                                                    <div class="map-container">
-                                                        <!-- Kerala Tourist Map -->
-                                                        <div class="kerala-tourist-map">
-                                                            <!-- Map Canvas -->
-                                                            <div id="keralaMapCanvas"></div>
 
-                                                            <!-- Loading Overlay -->
-                                                            <div class="kerala-map-loader" id="keralaLoader">
-                                                                <div class="loader-spinner"></div>
-                                                            </div>
+                                            <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+                                            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+                                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+                                            <style>
 
-                                                            <!-- Location Badge -->
-                                                        
+                                            body { 
+                                                background: #ffffff;
+                                                margin: 0;
+                                                padding: 12px;
+                                            }
+                                            /* Remove Leaflet control borders */
+                                            .leaflet-touch .leaflet-bar,
+                                            .leaflet-touch .leaflet-control-layers {
+                                                border: none !important;
+                                                box-shadow: none !important;
+                                            }
 
-                                                            
-                                                        </div>
+                                            /* Optional: remove border from zoom buttons too */
+                                            .leaflet-bar a {
+                                                border: none !important;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                body {
+                                                padding: 20px;
+                                                }
+                                            }
+
+                                            .map-container {
+                                                background: #ffffff;
+                                                border-radius: 20px;
+                                                padding: 16px;
+                                                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                                                border: 1px solid #e5e7eb;
+                                                position: relative;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .map-container {
+                                                padding: 24px;
+                                                border-radius: 24px;
+                                                }
+                                            }
+
+                                            #map {
+                                                width: 100%;
+                                                height: 400px;
+                                                border-radius: 16px;
+                                                z-index: 1;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                #map {
+                                                height: 600px;
+                                                }
+                                            }
+
+                                            .leaflet-popup-content-wrapper {
+                                                border-radius: 16px !important;
+                                                padding: 0 !important;
+                                            }
+
+                                            .leaflet-popup-content {
+                                                margin: 0 !important;
+                                            }
+
+                                            .sidebar-container {
+                                                background: #ffffff;
+                                                border-radius: 20px;
+                                                padding: 16px;
+                                                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                                                border: 1px solid #e5e7eb;
+                                                max-height: 500px;
+                                                display: flex;
+                                                flex-direction: column;
+                                                margin-bottom: 20px;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .sidebar-container {
+                                                padding: 24px;
+                                                border-radius: 24px;
+                                                max-height: 700px;
+                                                margin-bottom: 0;
+                                                }
+                                            }
+
+                                            .sidebar-header {
+                                                margin-bottom: 20px;
+                                            }
+
+                                            .sidebar-title {
+                                                font-size: 20px;
+                                                font-weight: 800;
+                                                color: #1f2937;
+                                                margin-bottom: 6px;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .sidebar-title {
+                                                font-size: 24px;
+                                                margin-bottom: 8px;
+                                                }
+                                            }
+
+                                            .sidebar-subtitle {
+                                                font-size: 13px;
+                                                color: #6b7280;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .sidebar-subtitle {
+                                                font-size: 14px;
+                                                }
+                                            }
+
+                                            .filter-toggle-container {
+                                                background: #f3f4f6;
+                                                padding: 14px;
+                                                border-radius: 12px;
+                                                margin-bottom: 16px;
+                                                border: 1px solid #e5e7eb;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .filter-toggle-container {
+                                                padding: 16px;
+                                                border-radius: 16px;
+                                                }
+                                            }
+
+                                            .district-list {
+                                                overflow-y: auto;
+                                                flex: 1;
+                                                padding-right: 4px;
+                                            }
+
+                                            .district-list::-webkit-scrollbar {
+                                                width: 6px;
+                                            }
+
+                                            .district-list::-webkit-scrollbar-track {
+                                                background: transparent;
+                                            }
+
+                                            .district-list::-webkit-scrollbar-thumb {
+                                                background: #d1d5db;
+                                                border-radius: 10px;
+                                            }
+
+                                            .district-item {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                                padding: 10px;
+                                                border-radius: 10px;
+                                                margin-bottom: 6px;
+                                                cursor: pointer;
+                                                transition: all 0.3s ease;
+                                                border: 1px solid transparent;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .district-item {
+                                                padding: 12px;
+                                                border-radius: 12px;
+                                                margin-bottom: 8px;
+                                                }
+                                            }
+
+                                            .district-item:hover {
+                                                background: #f3f4f6;
+                                                border-color: #d1d5db;
+                                            }
+
+                                            .district-item.selected {
+                                                background: #3b82f6;
+                                                border-color: transparent;
+                                                box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                                            }
+
+                                            .district-item.inactive {
+                                                opacity: 1;
+                                            }
+
+                                            .legend-container {
+                                                position: absolute;
+                                                top: 20px;
+                                                right: 20px;
+                                                background: #ffffff;
+                                                border-radius: 12px;
+                                                padding: 12px;
+                                                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                                                border: 1px solid #e5e7eb;
+                                                z-index: 1000;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .legend-container {
+                                                top: 32px;
+                                                right: 32px;
+                                                border-radius: 16px;
+                                                padding: 16px;
+                                                }
+                                            }
+
+                                            .legend-item {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 8px;
+                                                margin-bottom: 10px;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .legend-item {
+                                                gap: 12px;
+                                                margin-bottom: 12px;
+                                                }
+                                            }
+
+                                            .legend-item:last-child {
+                                                margin-bottom: 0;
+                                            }
+
+                                            .legend-dot {
+                                                width: 14px;
+                                                height: 14px;
+                                                border-radius: 50%;
+                                                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                                                flex-shrink: 0;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .legend-dot {
+                                                width: 16px;
+                                                height: 16px;
+                                                }
+                                            }
+
+                                            .legend-dot.operational {
+                                                background: #3b82f6;
+                                            }
+
+                                            .legend-dot.inactive {
+                                                background: #9ca3af;
+                                            }
+
+                                            .legend-label {
+                                                font-size: 11px;
+                                                font-weight: 600;
+                                                color: #4b5563;
+                                                text-transform: uppercase;
+                                                letter-spacing: 0.3px;
+                                            }
+
+                                            @media (min-width: 768px) {
+                                                .legend-label {
+                                                font-size: 12px;
+                                                letter-spacing: 0.5px;
+                                                }
+                                            }
+
+                                            .main-grid {
+                                                display: grid;
+                                                grid-template-columns: 1fr;
+                                                gap: 20px;
+                                                max-width: 1400px;
+                                                margin: 0 auto;
+                                            }
+
+                                            @media (min-width: 1024px) {
+                                                .main-grid {
+                                                grid-template-columns: 380px 1fr;
+                                                }
+                                            }
+
+                                            @media (min-width: 1280px) {
+                                                .main-grid {
+                                                grid-template-columns: 420px 1fr;
+                                                }
+                                            }
+                                            </style>
+
+                                            <div class="main-grid">
+
+                                            <div>
+                                                <div class="sidebar-container">
+                                                <div class="sidebar-header">
+                                                    <h2 class="sidebar-title">District Selection</h2>
+                                                    <p class="sidebar-subtitle">Click on districts to view on map</p>
+                                                </div>
+
+                                                <div class="filter-toggle-container">
+                                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                                    <span style="font-size: 14px; font-weight: 600; color: #374151;">Show All Districts</span>
+                                                    <label class="relative inline-flex items-center cursor-pointer">
+                                                        <input type="checkbox" id="filterToggle" class="sr-only peer">
+                                                        <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all shadow-sm"></div>
+                                                    </label>
                                                     </div>
                                                 </div>
-                                                <!-- map-wrapper end -->
-                                            </div>
-                                            <!--boxed-content-item end-->
 
-                                            <!-- Location Data -->
-                                            <script id="keralaLocationData" type="application/json">
-                                            {
-                                            "locations": [
-                                                {"name":"Kovalam Beach","lat":"8.4004","lng":"76.9784","type":"Beach","info":"Famous golden sand beach with pristine waters"},
-                                                {"name":"Varkala Beach","lat":"8.7379","lng":"76.7160","type":"Beach","info":"Cliff beach with natural springs and stunning views"},
-                                                {"name":"Marari Beach","lat":"9.6052","lng":"76.3212","type":"Beach","info":"Pristine and peaceful beach, perfect for relaxation"},
-                                                {"name":"Cherai Beach","lat":"10.1413","lng":"76.1786","type":"Beach","info":"Beautiful beach near Kochi with golden sands"},
-                                                {"name":"Padmanabhaswamy Temple","lat":"8.4831","lng":"76.9453","type":"Temple","info":"Ancient Hindu temple with magnificent architecture"},
-                                                {"name":"Guruvayur Temple","lat":"10.5944","lng":"76.0392","type":"Temple","info":"Famous Krishna temple, important pilgrimage site"},
-                                                {"name":"Sabarimala Temple","lat":"9.4347","lng":"77.0820","type":"Temple","info":"Sacred pilgrimage destination in the mountains"},
-                                                {"name":"Athirappilly Falls","lat":"10.2852","lng":"76.5703","type":"Waterfall","info":"Largest waterfall in Kerala, spectacular natural beauty"},
-                                                {"name":"Vazhachal Falls","lat":"10.3157","lng":"76.5658","type":"Waterfall","info":"Scenic forest waterfall with lush surroundings"},
-                                                {"name":"Meenmutty Falls","lat":"11.5557","lng":"76.1391","type":"Waterfall","info":"Three-tier waterfall in Wayanad region"},
-                                                {"name":"Kochi (Cochin)","lat":"9.9312","lng":"76.2673","type":"City","info":"Queen of Arabian Sea, historic port city"},
-                                                {"name":"Thiruvananthapuram","lat":"8.5241","lng":"76.9366","type":"City","info":"Capital city of Kerala, cultural hub"},
-                                                {"name":"Kozhikode (Calicut)","lat":"11.2588","lng":"75.7804","type":"City","info":"City of spices, rich historical heritage"},
-                                                {"name":"Thrissur","lat":"10.5276","lng":"76.2144","type":"City","info":"Cultural capital of Kerala"},
-                                                {"name":"Munnar","lat":"10.0889","lng":"77.0595","type":"Hill Station","info":"Hill station with stunning tea gardens"},
-                                                {"name":"Alleppey Backwaters","lat":"9.4981","lng":"76.3388","type":"Backwater","info":"Venice of the East, famous houseboat destination"},
-                                                {"name":"Kumarakom","lat":"9.6177","lng":"76.4318","type":"Backwater","info":"Backwater paradise with bird sanctuary"},
-                                                {"name":"Wayanad","lat":"11.6854","lng":"76.1320","type":"Hill Station","info":"Hill station with wildlife and natural beauty"},
-                                                {"name":"Thekkady (Periyar)","lat":"9.5945","lng":"77.1642","type":"Wildlife","info":"Wildlife sanctuary with elephant reserve"},
-                                                {"name":"Bekal Fort","lat":"12.3919","lng":"75.0364","type":"Fort","info":"Historic coastal fort with ocean views"}
-                                            ]
-                                            }
-                                            </script>
-
-                                            <!-- Map Script -->
-                                            <script>
-                                            (function() {
-                                                'use strict';
-
-                                                // Global variables
-                                                var keralaMap = null;
-                                                var keralaMarkers = [];
-                                                var keralaInfoWindow = null;
-                                                var keralaLocations = [];
-
-                                                // Initialize map
-                                                function initKeralaMap() {
-                                                    try {
-                                                        // Get location data
-                                                        var dataScript = document.getElementById('keralaLocationData');
-                                                        if (!dataScript) {
-                                                            console.error('Location data not found');
-                                                            return;
-                                                        }
-
-                                                        var data = JSON.parse(dataScript.textContent);
-                                                        keralaLocations = data.locations;
-
-                                                        // Get map container
-                                                        var mapContainer = document.getElementById('keralaMapCanvas');
-                                                        if (!mapContainer) {
-                                                            console.error('Map container not found');
-                                                            return;
-                                                        }
-
-                                                        // Check if Google Maps is loaded
-                                                        if (typeof google === 'undefined' || !google.maps) {
-                                                            console.error('Google Maps not loaded');
-                                                            return;
-                                                        }
-
-                                                        // Map options
-                                                        var mapOptions = {
-                                                            center: { lat: 10.8505, lng: 76.2711 },
-                                                            zoom: window.innerWidth <= 768 ? 7 : 8,
-                                                            mapTypeControl: window.innerWidth > 768,
-                                                            streetViewControl: false,
-                                                            fullscreenControl: true,
-                                                            zoomControl: true,
-                                                            gestureHandling: 'greedy',
-                                                            styles: [
-                                                                {
-                                                                    featureType: 'water',
-                                                                    elementType: 'geometry',
-                                                                    stylers: [{ color: '#a4d7f4' }, { lightness: 17 }]
-                                                                },
-                                                                {
-                                                                    featureType: 'landscape',
-                                                                    elementType: 'geometry',
-                                                                    stylers: [{ color: '#f5f5f5' }, { lightness: 20 }]
-                                                                },
-                                                                {
-                                                                    featureType: 'road.highway',
-                                                                    elementType: 'geometry.fill',
-                                                                    stylers: [{ color: '#ffffff' }, { lightness: 17 }]
-                                                                }
-                                                            ]
-                                                        };
-
-                                                        // Create map
-                                                        keralaMap = new google.maps.Map(mapContainer, mapOptions);
-                                                        keralaInfoWindow = new google.maps.InfoWindow();
-
-                                                        // Create bounds
-                                                        var bounds = new google.maps.LatLngBounds();
-
-                                                        // Add markers
-                                                        keralaLocations.forEach(function(location) {
-                                                            var position = {
-                                                                lat: parseFloat(location.lat),
-                                                                lng: parseFloat(location.lng)
-                                                            };
-
-                                                            var marker = new google.maps.Marker({
-                                                                position: position,
-                                                                map: keralaMap,
-                                                                title: location.name,
-                                                                icon: {
-                                                                    url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                                                                    scaledSize: new google.maps.Size(32, 32)
-                                                                },
-                                                                animation: google.maps.Animation.DROP
-                                                            });
-
-                                                            // Store location data
-                                                            marker.locationData = location;
-                                                            keralaMarkers.push(marker);
-
-                                                            // Add click listener
-                                                            marker.addListener('click', function() {
-                                                                showLocationInfo(marker);
-                                                            });
-
-                                                            // Extend bounds
-                                                            bounds.extend(position);
-                                                        });
-
-                                                        // Fit map to bounds
-                                                        keralaMap.fitBounds(bounds);
-
-                                                        // Hide loader after map loads
-                                                        google.maps.event.addListenerOnce(keralaMap, 'idle', function() {
-                                                            hideLoader();
-                                                            var zoom = keralaMap.getZoom();
-                                                            if (zoom > 11) {
-                                                                keralaMap.setZoom(11);
-                                                            }
-                                                        });
-
-                                                    } catch (error) {
-                                                        console.error('Error initializing map:', error);
-                                                        hideLoader();
-                                                    }
-                                                }
-
-                                                // Show location info
-                                                function showLocationInfo(marker) {
-                                                    var loc = marker.locationData;
-                                                    var directionsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + loc.lat + ',' + loc.lng;
-                                                    
-                                                    var content = 
-                                                        '<div class="kerala-info-box">' +
-                                                            '<div class="kerala-info-title">' + loc.name + '</div>' +
-                                                            '<div class="kerala-info-type">' + loc.type + '</div>' +
-                                                            '<div class="kerala-info-desc">' + loc.info + '</div>' +
-                                                            '<div class="kerala-info-coords">📍 ' + loc.lat + ', ' + loc.lng + '</div>' +
-                                                            '<a href="' + directionsUrl + '" target="_blank" class="kerala-info-link">🗺️ Get Directions</a>' +
-                                                        '</div>';
-
-                                                    keralaInfoWindow.setContent(content);
-                                                    keralaInfoWindow.open(keralaMap, marker);
-                                                    keralaMap.panTo(marker.getPosition());
-                                                }
-
-                                                // Hide loader
-                                                function hideLoader() {
-                                                    var loader = document.getElementById('keralaLoader');
-                                                    if (loader) {
-                                                        loader.classList.add('hidden');
-                                                    }
-                                                }
-
-                                                // Search function
-                                                function searchLocation() {
-                                                    var input = document.getElementById('keralaSearchInput');
-                                                    if (!input) return;
-
-                                                    var query = input.value.toLowerCase().trim();
-                                                    
-                                                    if (!query) {
-                                                        alert('Please enter a location name');
-                                                        return;
-                                                    }
-
-                                                    var found = false;
-
-                                                    for (var i = 0; i < keralaMarkers.length; i++) {
-                                                        var marker = keralaMarkers[i];
-                                                        var loc = marker.locationData;
-
-                                                        if (loc.name.toLowerCase().indexOf(query) !== -1 || 
-                                                            loc.type.toLowerCase().indexOf(query) !== -1) {
-                                                            found = true;
-                                                            keralaMap.setZoom(12);
-                                                            keralaMap.panTo(marker.getPosition());
-                                                            showLocationInfo(marker);
-                                                            break;
-                                                        }
-                                                    }
-
-                                                    if (!found) {
-                                                        alert('Location not found. Try: Beach, Temple, Waterfall, City, etc.');
-                                                    }
-                                                }
-
-                                                // Setup event listeners
-                                                function setupEventListeners() {
-                                                    var searchBtn = document.getElementById('keralaSearchBtn');
-                                                    var searchInput = document.getElementById('keralaSearchInput');
-
-                                                    if (searchBtn) {
-                                                        searchBtn.addEventListener('click', searchLocation);
-                                                    }
-
-                                                    if (searchInput) {
-                                                        searchInput.addEventListener('keypress', function(e) {
-                                                            if (e.key === 'Enter' || e.keyCode === 13) {
-                                                                searchLocation();
-                                                            }
-                                                        });
-                                                    }
-                                                }
-
-                                                // Load Google Maps API
-                                                function loadGoogleMapsAPI() {
-                                                    if (typeof google !== 'undefined' && google.maps) {
-                                                        initKeralaMap();
-                                                        setupEventListeners();
-                                                        return;
-                                                    }
-
-                                                    window.initKeralaMap = initKeralaMap;
-
-                                                    var script = document.createElement('script');
-                                                    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&callback=initKeralaMap';
-                                                    script.async = true;
-                                                    script.defer = true;
-                                                    
-                                                    script.onerror = function() {
-                                                        console.error('Failed to load Google Maps');
-                                                        hideLoader();
-                                                    };
-
-                                                    document.head.appendChild(script);
-
-                                                    // Setup listeners after small delay
-                                                    setTimeout(setupEventListeners, 1000);
-                                                }
-
-                                                // Initialize on DOM ready
-                                                if (document.readyState === 'loading') {
-                                                    document.addEventListener('DOMContentLoaded', loadGoogleMapsAPI);
-                                                } else {
-                                                    loadGoogleMapsAPI();
-                                                }
-
-                                            })();
-                                            </script>
-                                                    <!--boxed-content-item end-->
+                                                <div class="district-list" id="districtList">
                                                 </div>
-                                                <!--GOOGLE MAP------------------------------------------- end-->
-                                                
+                                                </div>
                                             </div>
+
+                                            <div>
+                                                <div class="map-container">
+                                                
+                                                <div class="legend-container">
+                                                    <div class="legend-item">
+                                                    <div class="legend-dot operational"></div>
+                                                    <span class="legend-label">Operational</span>
+                                                    </div>
+                                                    <div class="legend-item">
+                                                    <div class="legend-dot inactive"></div>
+                                                    <span class="legend-label">Not Active</span>
+                                                    </div>
+                                                </div>
+
+                                                <div id="map"></div>
+                                                </div>
+                                            </div>
+
+                                            </div>
+
+                                            <script>
+                                            const districts = [
+                                                { name: 'Ernakulam', lat: 10.0261, lng: 76.3125, operational: true, selected: true },
+                                                { name: 'Palakkad', lat: 10.7867, lng: 76.6548, operational: true },
+                                                { name: 'Thrissur', lat: 10.5276, lng: 76.2144, operational: true },
+                                                { name: 'Kollam', lat: 8.8932, lng: 76.6141, operational: true },
+                                                { name: 'Malappuram', lat: 11.0510, lng: 76.0711, operational: true },
+                                                { name: 'Kottayam', lat: 9.5916, lng: 76.5222, operational: true },
+                                                { name: 'Alappuzha', lat: 9.4981, lng: 76.3388, operational: true },
+                                                { name: 'Idukki', lat: 9.9186, lng: 77.1025, operational: true },
+                                                { name: 'Pathanamthitta', lat: 9.2648, lng: 76.7870, operational: true },
+                                                { name: 'Thiruvananthapuram', lat: 8.5241, lng: 76.9366, operational: true, hq: true },
+                                                { name: 'Kasaragod', lat: 12.4996, lng: 75.0764, operational: false },
+                                                { name: 'Kannur', lat: 11.8745, lng: 75.3704, operational: false },
+                                                { name: 'Wayanad', lat: 11.6854, lng: 76.1320, operational: false },
+                                                { name: 'Kozhikode', lat: 11.2588, lng: 75.7804, operational: false }
+                                            ];
+
+                                            let map;
+                                            let markers = {};
+
+                                            map = L.map('map').setView([10.8505, 76.2711], 8);
+
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                attribution: '© OpenStreetMap contributors',
+                                                maxZoom: 18
+                                            }).addTo(map);
+
+                                            function createCustomIcon(operational, selected) {
+                                                if (operational) {
+                                                    return L.divIcon({
+                                                        className: 'custom-div-icon',
+                                                        html: `<div style="
+                                                            font-size: ${selected ? '32px' : '24px'}; 
+                                                            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+                                                            transform: translate(-50%, -100%);
+                                                            line-height: 1;
+                                                        ">🚩</div>`,
+                                                        iconSize: [selected ? 32 : 24, selected ? 32 : 24],
+                                                        iconAnchor: [selected ? 16 : 12, selected ? 32 : 24]
+                                                    });
+                                                } else {
+                                                    return L.divIcon({
+                                                        className: 'custom-div-icon',
+                                                        html: `<div style="
+                                                            width: ${selected ? '28px' : '22px'}; 
+                                                            height: ${selected ? '28px' : '22px'}; 
+                                                            background: #9ca3af;
+                                                            border: 3px solid white;
+                                                            border-radius: 50%;
+                                                            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                                                            transform: translate(-50%, -50%);
+                                                        "></div>`,
+                                                        iconSize: [selected ? 28 : 22, selected ? 28 : 22],
+                                                        iconAnchor: [selected ? 14 : 11, selected ? 14 : 11]
+                                                    });
+                                                }
+                                            }
+
+                                            districts.forEach(district => {
+                                                const marker = L.marker([district.lat, district.lng], {
+                                                icon: createCustomIcon(district.operational, district.selected)
+                                                }).addTo(map);
+
+                                                const popupContent = `
+                                                <div style="padding: 20px; min-width: 240px; background: #ffffff; border-radius: 16px;">
+                                                    <h3 style="font-size: 20px; font-weight: bold; color: #1f2937; margin-bottom: 12px;">
+                                                    ${district.name} District
+                                                    </h3>
+                                                    <span style="display: inline-block; background: ${district.operational ? '#dcfce7' : '#fee2e2'}; 
+                                                                color: ${district.operational ? '#15803d' : '#991b1b'}; 
+                                                                padding: 6px 14px; border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase;
+                                                                border: 1px solid ${district.operational ? '#86efac' : '#fca5a5'};
+                                                                letter-spacing: 0.5px;">
+                                                    ${district.operational ? '✓ Operational' : '✕ Not Active'}
+                                                    </span>
+                                                    ${district.hq ? '<p style="margin-top: 12px; font-size: 13px; color: #6b7280;">🏢 Headquarters</p>' : ''}
+                                                    ${district.operational ? `
+                                                    <button onclick="viewServiceCenters('${district.name}')" 
+                                                            style="margin-top: 16px; width: 100%; background: #3b82f6; 
+                                                                    color: white; padding: 12px; border-radius: 10px; font-weight: 600; 
+                                                                    border: none; cursor: pointer; font-size: 14px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+                                                                    transition: background 0.3s;">
+                                                        View Service Centers →
+                                                    </button>
+                                                    ` : ''}
+                                                </div>
+                                                `;
+
+                                                marker.bindPopup(popupContent);
+
+                                                if (district.selected) {
+                                                marker.openPopup();
+                                                }
+
+                                                marker.on('click', function() {
+                                                Object.keys(markers).forEach(key => {
+                                                    const m = markers[key];
+                                                    m.marker.setIcon(createCustomIcon(m.district.operational, false));
+                                                });
+                                                
+                                                marker.setIcon(createCustomIcon(district.operational, true));
+                                                map.setView([district.lat, district.lng], 10);
+                                                updateDistrictList(district.name);
+                                                });
+
+                                                markers[district.name] = { marker, district };
+                                            });
+
+                                            function populateDistrictList() {
+                                                const listContainer = document.getElementById('districtList');
+                                                const filterToggle = document.getElementById('filterToggle');
+                                                
+                                                function renderList() {
+                                                const showOnlyOperational = filterToggle.checked;
+                                                const filteredDistricts = showOnlyOperational 
+                                                    ? districts.filter(d => d.operational) 
+                                                    : districts;
+
+                                                listContainer.innerHTML = filteredDistricts.map(district => `
+                                                    <div class="district-item ${district.selected ? 'selected' : ''} ${!district.operational && !showOnlyOperational ? 'inactive' : ''}"
+                                                        onclick="focusDistrict('${district.name}')">
+                                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                                        <input type="checkbox" ${district.operational ? 'checked' : ''} 
+                                                            style="width: 18px; height: 18px; border-radius: 6px; pointer-events: none; 
+                                                                    accent-color: #3b82f6; cursor: pointer;">
+                                                        <span style="font-weight: ${district.selected ? '700' : '500'}; 
+                                                                    color: ${district.selected ? '#ffffff' : '#374151'}; font-size: 14px;">
+                                                        ${district.name}
+                                                        </span>
+                                                    </div>
+                                                    ${district.selected ? 
+                                                        '<span style="font-size: 10px; background: rgba(255,255,255,0.25); padding: 4px 10px; border-radius: 8px; font-weight: 600; color: white;">SELECTED</span>' : 
+                                                        district.hq ? '<span style="font-size: 11px; color: #6b7280; font-weight: 600;">HQ</span>' :
+                                                        `<span style="width: 8px; height: 8px; background: ${district.operational ? '#10b981' : '#ef4444'}; border-radius: 50%; display: block;"></span>`
+                                                    }
+                                                    </div>
+                                                `).join('');
+                                                }
+
+                                                filterToggle.addEventListener('change', renderList);
+                                                renderList();
+                                            }
+
+                                            function updateDistrictList(selectedName) {
+                                                districts.forEach(d => d.selected = d.name === selectedName);
+                                                populateDistrictList();
+                                            }
+
+                                            function focusDistrict(name) {
+                                                const markerData = markers[name];
+                                                if (markerData) {
+                                                map.setView([markerData.district.lat, markerData.district.lng], 10);
+                                                markerData.marker.openPopup();
+                                                
+                                                Object.keys(markers).forEach(key => {
+                                                    const m = markers[key];
+                                                    m.marker.setIcon(createCustomIcon(m.district.operational, key === name));
+                                                });
+                                                
+                                                updateDistrictList(name);
+                                                }
+                                            }
+
+                                            function viewServiceCenters(districtName) {
+                                                alert(`Opening service centers for ${districtName} district...`);
+                                            }
+
+                                            populateDistrictList();
+                                            </script>
+                                         </div>
+                         <!--------------- areaa of working------------------------------------------------------->
+                                         </div>
 
                                             <!-- photo section -->
                                              <div class="single-box-content">

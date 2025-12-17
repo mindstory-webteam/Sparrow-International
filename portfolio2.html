@@ -1,469 +1,368 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!--=============== basic  ===============-->
-        <meta charset="UTF-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Trustbook - Construction Architecture Renovate  Template</title>
-        <!--=============== css  ===============-->	
-        <link type="text/css" rel="stylesheet" href="css/plugins.css">
-        <link type="text/css" rel="stylesheet" href="css/style.css">
-        <!--=============== favicons ===============-->
-        <link rel="shortcut icon" href="images/favicon.ico">
-    </head>
-    <body>
-        <!-- lodaer  -->
-        <div class="loader-wrap">
-            <div class="loader-spin"><span></span></div>
-        </div>
-        <!-- loader end  -->
-        <!--  main   -->
-        <div id="main">
-            <!--  header-top  -->
-            <div class="header-top">
-                <div class="container">
-                    <a class="top-header-logo" href="index.html"></a>		
-                    <!-- nav-button-wrap-->
-                    <div class="nav-button-wrap">
-                        <div class="nav-button">
-                            <span></span><span></span><span></span>
-                        </div>
-                    </div>
-                    <!-- nav-button-wrap end-->												
-                    <div class="header-search_btn"><i class="fa fa-search transition"></i> </div>
-                    <!-- lang-wrap-->
-                    <div class="lang-wrap">
-                        <div class="show-lang"><span><i class="fa-thin fa-language"></i><strong>En</strong></span><i class="fa fa-caret-down arrlan"></i></div>
-                        <ul class="lang-tooltip lang-action no-list-style">
-                            <li><a href="#" class="current-lan" data-lantext="En">English</a></li>
-                            <li><a href="#" data-lantext="Fr">Franais</a></li>
-                            <li><a href="#" data-lantext="Es">Espaol</a></li>
-                            <li><a href="#" data-lantext="De">Deutsch</a></li>
-                        </ul>
-                    </div>
-                    <!-- lang-wrap end--> 						
-                    <div class="header-social">
-                        <ul>
-                            <li> <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a> </li>
-                            <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- share button--> 	
-                    <div class="share-button showshare">
-                        <span>Share</span><i class="fa-regular fa-up-right-from-square"></i>
-                    </div>
-                    <!-- share button end-->											
-                </div>
-                <div class="share-holder isShare">
-                    <div class="share-container"></div>
-                </div>
-                <!-- header-search-wrap -->
-                <div class="header-search-wrap">
-                    <div class="widget-inner">
-                        <form action="#">
-                            <input name="se" id="se" type="text" class="search" placeholder="Search...">
-                            <button class="search-submit" id="submit_btn"><i class="fal fa-search transition"></i> </button>
-                        </form>
-                    </div>
-                </div>
-                <!-- header-search-wrap end -->							
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Office Locations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Map Container */
+        .map-wrapper {
+            background: rgba(45, 21, 21, 0.4);
+            border: 1px solid rgba(255, 50, 50, 0.15);
+            border-radius: 18px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5),
+                        inset 0 0 60px rgba(255, 50, 50, 0.02);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        #map {
+            width: 100%;
+            height: 600px;
+            border-radius: 14px;
+            z-index: 2;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 50, 50, 0.1);
+        }
+
+        /* Custom Markers */
+        .custom-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            border: 3px solid #ff3232;
+            box-shadow: 0 0 20px rgba(255, 50, 50, 0.5);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #2d1515;
+        }
+
+        .custom-marker:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 40px rgba(255, 50, 50, 0.8);
+        }
+
+        /* HQ Marker */
+        .custom-marker.hq {
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            border-color: #dc2626;
+            animation: pulseMain 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseMain {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+            }
+            50% {
+                transform: scale(1.12);
+                box-shadow: 0 0 40px rgba(220, 38, 38, 0.8);
+            }
+        }
+
+        /* Sub Branch Marker */
+        .custom-marker.sub {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            border-color: #ff3232;
+        }
+
+        .custom-marker.sub:hover {
+            border-color: #dc2626;
+        }
+
+        /* Popup Styling */
+        .popup-content {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .popup-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #ff3232;
+            margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .popup-detail {
+            font-size: 12px;
+            color: #aa8888;
+            margin: 4px 0;
+        }
+
+        /* Leaflet Controls */
+        .leaflet-control-attribution {
+            background: rgba(26, 10, 10, 0.8) !important;
+            color: #b8bcc9 !important;
+            border-radius: 8px;
+            font-size: 9px;
+            border: 1px solid rgba(255, 50, 50, 0.15) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .leaflet-control-attribution a {
+            color: #ff3232 !important;
+        }
+
+        .leaflet-control-zoom {
+            border-radius: 10px;
+            background: rgba(26, 10, 10, 0.8) !important;
+            border: 1px solid rgba(255, 50, 50, 0.15) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .leaflet-control-zoom a {
+            background: rgba(255, 50, 50, 0.1) !important;
+            color: #ff3232 !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(255, 50, 50, 0.1) !important;
+            transition: all 0.3s ease !important;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .leaflet-control-zoom a:hover {
+            background: rgba(255, 50, 50, 0.2) !important;
+            color: #dc2626 !important;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            #map {
+                height: 500px;
+            }
+
+            .map-wrapper {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 12px;
+            }
+
+            #map {
+                height: 400px;
+            }
+
+            .map-wrapper {
+                padding: 12px;
+            }
+
+            .custom-marker.hq {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .custom-marker.sub {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="col-lg-8">
+            <!-- map-wrapper -->
+            <div class="map-wrapper">
+                <div id="map"></div>
             </div>
-            <!--  header-top end -->
-            <!-- header -->
-            <header class="main-header">
-                <div class="header-container">
-                    <div class="header-inner">
-                        <a href="index.html" class="logo-holder"> <img src="images/logo3.png" alt=""> </a>
-                        <!--  navigation -->
-                        <div class="nav-title">Menu</div>
-                        <div class="nav-holder main-menu">
-                            <nav class="nav-inner" id="menu-init">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fa-light fa-house"></i>Home</a>
-                                        <!--second level -->
-                                        <ul>
-                                            <li><a href="index.html">Slider</a></li>
-                                            <li><a href="index2.html">Carousel</a></li>
-                                            <li><a href="index3.html">Slideshow</a></li>
-                                            <li><a href="index4.html">Video</a></li>
-                                            <li><a href="onepage.html">One Page</a></li>
-                                        </ul>
-                                        <!--second level end-->
-                                    </li>
-                                    <li><a href="about.html"><i class="fa-light fa-file-circle-info"></i>About</a></li>
-                                    <li><a href="services.html"><i class="fa-light fa-trowel-bricks"></i>Services</a></li>
-                                    <li>
-                                        <a href="#" class="act-link"><i class="fa-light fa-house"></i>Projects</a>
-                                        <!--second level -->
-                                        <ul>
-                                            <li><a href="portfolio.html">Projects</a></li>
-                                            <li><a href="portfolio2.html">Projects 2</a></li>
-                                            <li><a href="portfolio3.html">Projects 3</a></li>
-                                            <li><a href="portfolio-single.html">Project single</a></li>
-                                            <li><a href="portfolio-single2.html">Project single 2</a></li>
-                                            <li><a href="portfolio-single3.html">Project single 3</a></li>
-                                            <li><a href="portfolio-single4.html">Project single 4</a></li>
-                                        </ul>
-                                        <!--second level end-->
-                                    </li>
-                                    <li><a href="contact.html"><i class="fa-light fa-envelopes-bulk"></i>Contact</a></li>
-                                    <li>
-                                        <a href="#"><i class="fa-light fa-file-lines"></i>Pages</a>
-                                        <!--second level -->
-                                        <ul>
-                                            <li><a href="services-single.html">Services single</a></li>
-                                            <li><a href="blog-single.html">Blog single</a></li>
-                                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                        <!--second level end-->
-                                    </li>
-                                    <li><a href="blog.html"><i class="fa-light fa-credit-card-front"></i>News</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- navigation  end -->
-                        <div class="nav-title">Contacts</div>
-                        <div class="header-contact">
-                            <ul>
-                                <li><i class="fa-light fa-envelope"></i><a href="mailto:yourmail@domain.com"> yourmail@domain.com</a></li>
-                                <li><i class="fa-light fa-location-dot"></i><a href="https://goo.gl/maps/dj5UaNJFkJ6rLNJy9" target="_blank"> 27th Brooklyn New York, NY 10065</a></li>
-                                <li><i class="fa-light fa-phone-rotary"></i><a href="tel:+9(111)123456789"> +7(111)123456789</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <a href="contact.html" class="header_btn"><span>Request a Quote</span></a>
-            </header>
-            <!-- header end  -->
-            <!-- wrapper -->	
-            <div class="wrapper">
-                <!-- section -->
-                <div class="section hero-section">
-                    <div class="bg-wrap-container" data-scrollax-parent="true">
-                        <div class="bg bg-parallax" data-bg="images/bg/1.jpg"  data-scrollax="properties: { translateY: '30%' }"></div>
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="container">
-                        <div class="hero-section-title">
-                            <h5>Our Works</h5>
-                            <h2>Our Portfolio Cases</h2>
-                            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                            <div class="subbfooter_dec"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- section end-->				
-                <!--content-->
-                <div class="content">
-                    <!--content-box-->
-                    <div class="content-box">
-                        <!-- breadcrumbs-wrap  -->
-                        <div class="breadcrumbs">
-                            <div class="container">
-                                <div class="breadcrumbs-wrap">
-                                    <a href="#">Home</a><a href="#">Pages</a><span>Portfolio 2</span> 
-                                </div>
-                                <div class="hs-scroll-down-wrap">
-                                    <div class="scroll-down-item">
-                                        <span>Scroll Down To Discover</span>
-                                        <div class="mousey">
-                                            <div class="scroller"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--breadcrumbs-wrap end  -->					
-                        <!--section -->
-                        <div class="section">
-                            <div class="container">
-                                <div class="boxed-content">
-                                    <div class="fs-gallery-filters-container gfc-fs">
-                                        <div class="gallery-filters-wrap  gfc-fs2">
-                                            <div class="fixed-filters_title filter-button dark-bg2"><i class="fa-regular fa-bars-filter"></i>Filters</div>
-                                            <div class="gallery-filters hid-filter">
-                                                <a href="#" class="gallery-filter gallery-filter-active" data-filter="*"><span>All Projects</span></a>
-                                                <a href="#" class="gallery-filter " data-filter=".renovate"><span>Renovate</span></a>
-                                                <a href="#" class="gallery-filter" data-filter=".bulding"><span>Bulding</span></a>
-                                                <a href="#" class="gallery-filter" data-filter=".architecture"><span>Architecture</span></a>
-                                            </div>
-                                            <div class="count-folio">
-                                                <div class="num-album"></div>
-                                                <div class="all-album"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-items  three-columns gi-fw2 gfc-fs-container">
-                                        <div class="gallery-items-container">
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item  bulding  renovate">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Greenhouse Construction</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item    bulding">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Bulding</a></li>
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>White Walls House</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item bulding gallery-item-second">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Bulding</a></li>
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Park Life Renovate</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item   bulding renovate">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Bulding</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Project Endoran</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item  architecture  bulding">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Renovare</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Trinity River Renovate</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item  renovate  architecture">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Architecture</a></li>
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>World Trade Center</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->								
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item   bulding renovate">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Spire Edge Center</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item  architecture  renovate">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Building</a></li>
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Wood River Ships Center</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->									
-                                            <!-- gallery-item-->
-                                            <div class="gallery-item bulding architecture">
-                                                <div class="grid-item-holder hov_zoom">
-                                                    <ul class="post_header_cat">
-                                                        <li><a href="#" class="cat-opt">Rooms</a></li>
-                                                        <li><a href="#" class="cat-opt">House</a></li>
-                                                    </ul>
-                                                    <img  src="images/folio/1.jpg"    alt="">
-                                                    <a href="images/folio/1.jpg" class="box-media-zoom   single-popup-image"><i class="fal fa-search"></i></a>
-                                                    <div class="overlay"></div>
-                                                    <div class="grid-item-det-wrap">
-                                                        <div class="grid-item-det"><a href="portfolio-single.html"><span>Theatre de Stoep</span><i class="fa-regular fa-arrow-right"></i></a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- gallery-item end-->								
-                                        </div>
-                                        <!--boxed-content-item end-->
-                                    </div>
-                                    <div class="bc_dec-line_h"></div>
-                                    <div class="bc_dec-line_v"></div>
-                                    <div class="order-wrap order-wrap_fw  gfc-fs2">
-                                        <div class="row">
-                                            <div class="col-md-8">
-                                                <div class="ticker">Ready to order your project or services? Get in touch with us</div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <a href="contact.html" class="btn"><span>Get In Touch</span><i class="fa-regular fa-arrow-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="section-dec fs-wrapper">
-                                    <div class="section-dec-top"></div>
-                                    <div class="section-dec-border"></div>
-                                    <div class="section-dec-bottom"></div>
-                                    <div class="section-dec-top_line"></div>
-                                    <div class="section-dec-bottom_line"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--section end-->				
-                    </div>
-                    <!-- content-box end -->
-                    <div class="content-dec">
-                        <div class="container">
-                            <div class="content-dec-item">	<span></span>	</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- content end -->
-                <!-- footer -->
-                <div class="height-emulator"></div>
-                <footer class="main-footer">
-                    <!-- footer-inner -->
-                    <div class="footer-inner ">
-                        <div class="container">
-                            <div class="footer-inner-wrap">
-                                <div class="row">
-                                    <!-- footer-widget-->
-                                    <div class="col-lg-4">
-                                        <div class="footer-widget">
-                                            <div class="footer-header fl-wrap"><span>01.</span> About US</div>
-                                            <div class="footer_text  footer-box ">
-                                                <p>Our team takes over everything, from an idea and concept development to realization. We believe in traditions and incorporate them within our innovations.Client is the soul of the project. Aiusmod tempor incididunt ut labore sed dolore magna .</p>
-                                                <div class="footer-solcial">
-                                                    <ul>
-                                                        <li> <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a> </li>
-                                                        <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                                        <li><a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                                                        <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                                                        <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- footer-widget end-->
-                                    <!-- footer-widget-->
-                                    <div class="col-lg-4">
-                                        <div class="footer-widget">
-                                            <div class="footer-header fl-wrap"><span>02.</span> Contacts</div>
-                                            <!-- footer-contacts-->
-                                            <div class="footer-contacts footer-box ">
-                                                <ul>
-                                                    <li><span>Call:</span><a href="#">+489756412322</a></li>
-                                                    <li><span>Write  :</span><a href="#">yourmail@domain.com</a></li>
-                                                    <li><span>Find us : </span><a href="#">USA 27TH Brooklyn NY</a></li>
-                                                </ul>
-                                            </div>
-                                            <!-- footer contacts end -->
-                                            <a href="contact.html" class="fc_button">Get In Touch <i class="fa-light fa-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- footer-widget end-->
-                                    <!-- footer-widget-->
-                                    <div class="col-lg-4">
-                                        <div class="footer-widget">
-                                            <div class="footer-header "><span>03.</span> Subscribe</div>
-                                            <div class="footer-box fl-wrap">
-                                                <p>Want to be notified when we launch a new template or an udpate. Just sign up and we'll send you a notification by email.</p>
-                                                <div class="subcribe-form ">
-                                                    <form id="subscribe" class="subcribe-form_item">
-                                                        <input class="enteremail" name="email" id="subscribe-email" placeholder="Your Email" spellcheck="false" type="text">
-                                                        <button type="submit" id="subscribe-button" class="subscribe-button">Send</button>
-                                                        <label for="subscribe-email" class="subscribe-message"></label>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- footer-widget end-->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- footer-inner end -->
-                        <div class="footer-title-dec"><span>Trustbook  Construction</span> </div>
-                        <div class="footer-inner_dec footer-inner_dec-left"></div>
-                        <div class="footer-inner_dec footer-inner_dec-right"></div>
-                    </div>
-                    <!-- subbfooter -->
-                    <div class="subbfooter">
-                        <div class="container">
-                            <div class="policy-box">
-                                <span> &#169;  Trustbook 2025  /  All rights reserved. </span>
-                            </div>
-                            <div class="to-top-btn to-top">Back to top<i class="fal fa-long-arrow-up"></i></div>
-                            <div class="subbfooter_dec"></div>
-                        </div>
-                    </div>
-                    <!-- subbfooter end -->						
-                </footer>
-                <!-- footer end -->		
-            </div>
-            <!-- wrapper end -->
+            <!-- map-wrapper end -->
         </div>
-        <!-- Main end -->
-        <!--=============== scripts  ===============-->   
-        <script  src="js/jquery.min.js"></script>
-        <script  src="js/plugins.js"></script>
-        <script  src="js/scripts.js"></script>
-    </body>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script>
+        // Office data with flags for each location
+        const offices = [
+            {
+                name: 'Malappuram',
+                type: 'Main Branch (Headquarters)',
+                lat: 10.8302,
+                lng: 76.5044,
+                coordinates: '10.8302°N, 76.5044°E',
+                icon: '🏢'
+            },
+            {
+                name: 'Palakkad',
+                type: 'Sub-Branch',
+                lat: 10.7867,
+                lng: 76.6548,
+                coordinates: '10.7867°N, 76.6548°E',
+                icon: '🏛️'
+            },
+            {
+                name: 'Kottayam',
+                type: 'Sub-Branch',
+                lat: 9.5941,
+                lng: 76.5214,
+                coordinates: '9.5941°N, 76.5214°E',
+                icon: '🏛️'
+            },
+            {
+                name: 'Thrissur',
+                type: 'Sub-Branch',
+                lat: 10.5276,
+                lng: 76.2144,
+                coordinates: '10.5276°N, 76.2144°E',
+                icon: '🏛️'
+            },
+            {
+                name: 'Alappuzha',
+                type: 'Sub-Branch',
+                lat: 9.4981,
+                lng: 76.3388,
+                coordinates: '9.4981°N, 76.3388°E',
+                icon: '🏛️'
+            },
+            {
+                name: 'Kannur',
+                type: 'Sub-Branch',
+                lat: 12.1445,
+                lng: 75.3713,
+                coordinates: '12.1445°N, 75.3713°E',
+                icon: '🏛️'
+            }
+        ];
+
+        // Initialize map centered on Kerala
+        const map = L.map('map').setView([10.8505, 76.2711], 8);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Create markers
+        const markers = {};
+        const markerLayers = L.featureGroup().addTo(map);
+
+        offices.forEach((office) => {
+            const isHQ = office.type === 'Main Branch (Headquarters)';
+            const customIcon = L.divIcon({
+                html: `<div class="custom-marker ${isHQ ? 'hq' : 'sub'}">${office.icon}</div>`,
+                className: '',
+                iconSize: [isHQ ? 60 : 40, isHQ ? 60 : 40],
+                iconAnchor: [isHQ ? 30 : 20, isHQ ? 60 : 40]
+            });
+
+            const popupContent = `
+                <div class="popup-content">
+                    <div class="popup-title">${office.name}</div>
+                    <div class="popup-detail"><strong>Type:</strong> ${office.type}</div>
+                    <div class="popup-detail"><strong>Coordinates:</strong> ${office.coordinates}</div>
+                </div>
+            `;
+
+            const marker = L.marker([office.lat, office.lng], {
+                icon: customIcon,
+                title: office.name
+            })
+            .bindPopup(popupContent, { maxWidth: 300 })
+            .addTo(map);
+
+            markers[office.name] = marker;
+            markerLayers.addLayer(marker);
+        });
+
+        // Draw connection lines
+        const keralaOffice = offices[0];
+        const subOffices = offices.slice(1);
+        const connectionLayers = L.featureGroup().addTo(map);
+
+        subOffices.forEach((office) => {
+            // Main line
+            const polyline = L.polyline(
+                [
+                    [keralaOffice.lat, keralaOffice.lng],
+                    [office.lat, office.lng]
+                ],
+                {
+                    color: '#ff3232',
+                    weight: 2.5,
+                    opacity: 0.7,
+                    dashArray: '6, 4',
+                    lineCap: 'round',
+                    lineJoin: 'round'
+                }
+            ).addTo(map);
+
+            // Glow effect
+            const glowLine = L.polyline(
+                [
+                    [keralaOffice.lat, keralaOffice.lng],
+                    [office.lat, office.lng]
+                ],
+                {
+                    color: '#ff3232',
+                    weight: 8,
+                    opacity: 0.12,
+                    lineCap: 'round',
+                    lineJoin: 'round'
+                }
+            ).addTo(map);
+
+            connectionLayers.addLayer(polyline);
+            connectionLayers.addLayer(glowLine);
+        });
+
+        // Fit all markers in view
+        map.fitBounds(markerLayers.getBounds().pad(0.1));
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            map.invalidateSize();
+        });
+    </script>
+</body>
 </html>
