@@ -2671,7 +2671,7 @@ background: rgba(0, 0, 0, .6);
 }
 .serv-dec-btn-wrap a i  {
 	background: var(--main-color);
-	color:#000;
+	/* color:#000; */
 }
 .hcw_btn_wrap {
 	float: left;
@@ -5292,7 +5292,7 @@ background: rgba(0, 0, 0, .6);
 	width:46px;
 	height:46px;
 	line-height:46px;
- 	background: #000;
+ 	background: #164476;
     color: var(--main-color);
 	margin: 0 4px 4px 0;
 	font-size: 1.2em;
